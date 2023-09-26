@@ -64,7 +64,7 @@ Route.post("/create",imageUpload.single("image"),async(req,res)=>{
 
 Route.put("/update/:id",imageUpload.single("image"),async(req,res)=>{
     try{
-        const filepath=`http://${req.get('host')}/update/${req.file.filename}`;
+        const filepath=`http://${req.get('host')}/upload/${req.file.filename}`;
        await apiModel.findById(req.params.id)
        .then((result)=>{
         result.name=req.body.name;
